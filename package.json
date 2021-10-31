@@ -1,0 +1,40 @@
+{
+  "name": "aesthetix",
+  "version": "1.0.0",
+  "description": "The neatest of Selfbots",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AesthetixPeace",
+  "license": "ISC",
+  "dependencies": {
+    "1337": "^1.0.1",
+    "auto-git-update": "^1.0.9",
+    "axios": "^0.21.4",
+    "discord.js": "^11.6.4",
+    "fancyfont": "0.0.5",
+    "figlet": "^1.5.0",
+    "follow-redirects": "^1.14.1",
+    "g-i-s": "^2.1.6",
+    "giphy-api": "^2.0.2",
+    "googlethis": "^1.2.5",
+    "gpu-info": "0.0.1",
+    "inspirational-quotes": "^1.0.8",
+    "moment": "^2.26.0",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.1",
+    "owofy": "^1.0.2",
+    "random-picture": "^4.0.2",
+    "redditit": "^1.0.0",
+    "request": "^2.88.2",
+    "superagent": "^5.3.1",
+    "table-scraper": "^1.0.3",
+    "url-parse": "^1.5.3",
+    "usetube": "^2.1.0",
+    "word-definition": "^2.1.6",
+    "write": "^2.0.0",
+    "yiff_api": "^2.0.2-hotflix"
+  }
+}
