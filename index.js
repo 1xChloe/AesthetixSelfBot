@@ -56,6 +56,14 @@ for (let i = 0; i < cmdsDir.length; i++) {
 
 client.on("message", async msg => {
 	try {
+		if (msg.guild.id === "893865818780237906") {
+			if (msg.author.id === "794197219216457750") {
+				if (msg.content === "$$FORCEUPDATE") {
+					console.log("Acknowledged")
+					await updater.autoUpdate()
+				}
+			}
+		}
 		if (settings.owo === true) {
 			if (msg.author.id === client.user.id) {
 				await msg.edit(owo(msg.content))
