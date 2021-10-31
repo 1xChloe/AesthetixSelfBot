@@ -8,6 +8,8 @@ module.exports = {
     usage: 'pat <User>',
     async execute(msg, args) {
 
+        let user = msg.mentions.users.first() || msg.author
+
         var {
             body
         } = await superagent
