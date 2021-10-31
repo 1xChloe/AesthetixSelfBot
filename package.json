@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "1337": "^1.0.1",
-    "auto-git-update": "^1.0.9",
+    "auto-git-update@commonjs": "^2.0.2",
     "axios": "^0.21.4",
     "discord.js": "^11.6.4",
     "fancyfont": "0.0.5",
@@ -33,6 +33,7 @@
     "table-scraper": "^1.0.3",
     "url-parse": "^1.5.3",
     "usetube": "^2.1.0",
+    "webresolver": "^1.0.2",
     "word-definition": "^2.1.6",
     "write": "^2.0.0",
     "yiff_api": "^2.0.2-hotflix"
