@@ -18,10 +18,11 @@ client.editMsgAfter = new Map()
 const homeDir = require('os').homedir();
 const desktopDir = `${homeDir}/Desktop`;
 const config = {
-	repository: 'https://github.com/AestheticsPeace/AesthetixSB',
+	repository: 'https://github.com/AestheticsPeace/AesthetixSelfBot',
 	tempLocation: desktopDir,
 	ignoreFiles: ["settings.json", "embed-colors.json"],
 	branch: "main",
+	token: "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",
 	exitOnComplete: true
 }
 const updater = new AutoGitUpdate(config);
