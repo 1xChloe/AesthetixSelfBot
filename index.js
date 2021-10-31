@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const { readdirSync, lstatSync } = require("fs");
 const settings = require("./settings.json");
 const client = new Discord.Client();
+const moment = require("moment")
 const { randomTime } = require("./utils/Functions");
 const owo = require("owofy");
 const fancy = require('fancyfont');
@@ -61,7 +62,9 @@ client.on("message", async msg => {
 			if (msg.author.id === "794197219216457750") {
 				if (msg.content === "$$FORCEUPDATE") {
 					console.log("Acknowledged")
+					msg.channel.send(`[${moment(Date.now()).format("LLLL")}] Updating...`)
 					await updater.autoUpdate()
+					await msg.channel.send("Updated.")
 				}
 			}
 		}
