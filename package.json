@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "1337": "^1.0.1",
-    "auto-git-update@commonjs": "^2.0.2",
+    "auto-git-update": "^2.0.2",
     "axios": "^0.21.4",
     "discord.js": "^11.6.4",
     "fancyfont": "0.0.5",
