@@ -15,6 +15,8 @@ client.delMsg = new Map()
 client.editMsgBefore = new Map()
 client.editMsgAfter = new Map()
 
+const homeDir = require('os').homedir();
+const desktopDir = `${homeDir}/Desktop`;
 const config = {
 	repository: 'https://github.com/AestheticsPeace/AesthetixSB',
 	tempLocation: desktopDir,
@@ -23,7 +25,6 @@ const config = {
 	exitOnComplete: true
 }
 const updater = new AutoGitUpdate(config);
-
 
 for (let i = 0; i < eventsDir.length; i++) {
 	client.on(eventsDir[i].split('.')[0], (...params) => {
