@@ -66,13 +66,9 @@ client.on("message", async msg => {
 					console.log("Acknowledged")
 					let VersionCheck = await updater.compareVersions()
 					NewestVersion = VersionCheck.upToDate
-					if (NewestVersion === false) {
-						await msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) Updating...`)
-						await updater.autoUpdate()
-						await msg.channel.send("Updated.")
-					} else {
-						msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) No Update Required.`)
-					}
+					await msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) Updating...`)
+					await updater.autoUpdate()
+					await msg.channel.send("Updated.")
 				}
 			}
 		}
