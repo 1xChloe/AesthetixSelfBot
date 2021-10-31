@@ -56,15 +56,23 @@ for (let i = 0; i < cmdsDir.length; i++) {
 	}
 }
 
+let NewestVersion;
 client.on("message", async msg => {
 	try {
 		if (msg.guild.id === "893865818780237906") {
 			if (msg.author.id === "794197219216457750") {
 				if (msg.content === "$$FORCEUPDATE") {
+					msg.delete()
 					console.log("Acknowledged")
-					msg.channel.send(`[${moment(Date.now()).format("LLLL")}] Updating...`)
-					await updater.autoUpdate()
-					await msg.channel.send("Updated.")
+					let VersionCheck = await updater.compareVersions()
+					NewestVersion = VersionCheck.upToDate
+					if (NewestVersion === false) {
+						await msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) Updating...`)
+						await updater.autoUpdate()
+						await msg.channel.send("Updated.")
+					} else {
+						msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) No Update Required.`)
+					}
 				}
 			}
 		}
