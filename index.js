@@ -28,6 +28,11 @@ const config = {
 }
 const updater = new AutoGitUpdate(config);
 
+async function Start() {
+	await updater.autoUpdate();
+	await client.login(settings.token)
+}
+
 for (let i = 0; i < eventsDir.length; i++) {
 	client.on(eventsDir[i].split('.')[0], (...params) => {
 		if (Array.isArray(params) && params.length > 0)
@@ -67,8 +72,8 @@ client.on("message", async msg => {
 					let VersionCheck = await updater.compareVersions()
 					NewestVersion = VersionCheck.upToDate
 					await msg.channel.send(`[${moment(Date.now()).format("LLLL")}] (Current Version: ${VersionCheck.currentVersion}) => (Newest?: ${NewestVersion}) Updating...`)
-					await updater.autoUpdate()
-					await msg.channel.send("Updated.")
+					Start()
+					msg.channel.send("Updated")
 				}
 			}
 		}
@@ -135,10 +140,5 @@ client.on("message", async msg => {
 	} catch (error) {
 	}
 })
-
-async function Start() {
-	await updater.autoUpdate();
-	await client.login(settings.token)
-}
 
 Start()
