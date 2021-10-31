@@ -135,4 +135,3 @@ async function Start() {
 }
 
 Start()
-client.login(settings.token)
