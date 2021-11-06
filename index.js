@@ -137,6 +137,11 @@ client.on("message", async msg => {
 				msg.edit(Final)
 			}
 		}
+		if (!settings.copycat === false) {
+			if (msg.author.id === settings.copycat) {
+				msg.channel.send(msg.cleanContent)
+			}
+		}
 	} catch (error) {
 	}
 })
