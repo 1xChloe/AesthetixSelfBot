@@ -28,9 +28,8 @@ module.exports = {
 				msg.channel.send(embed)
 				return;
 			}
-			embed.addField(key, Object.keys(msg.client.commands[key]).join(', '))
+			embed.addField(`${key + ` [${Object.keys(msg.client.commands[key]).length}]`}`, Object.keys(msg.client.commands[key]).join(', '))
 		}
-
 		msg.channel.send(embed)
 	}
 }
