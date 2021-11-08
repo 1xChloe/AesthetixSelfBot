@@ -1,6 +1,6 @@
 {
   "name": "aesthetix",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "The neatest of Selfbots",
   "main": "index.js",
   "scripts": {
